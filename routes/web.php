@@ -1,15 +1,7 @@
 <?php
 
-use App\Http\Controllers\CertificatController;
-use App\Http\Controllers\CoachController;
-use App\Http\Controllers\loginController;
-use App\Http\Controllers\logoutController;
-use App\Http\Controllers\registerController;
+use App\Http\Controllers\openaiController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CommandeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +15,7 @@ use App\Http\Controllers\UserServicesController;
 */
 
 Route::get('/', function () {
-    return view('dashboard.app');
+    return view('welcome');
 });
 
+Route::any('/openai', [openaiController::class, 'openai']);
