@@ -21,7 +21,7 @@ body{
 }
 
 .main{
-    height: 100vh;
+    height: 93vh;
     width: 70%;
     padding: 20px;
     background-color: #343541;
@@ -64,7 +64,7 @@ input{
 
 .cta{
     background-color: #40414F;
-    padding: 40px;
+    padding: 20px;
     width: 100%;
     border-radius: 20px;
 }
