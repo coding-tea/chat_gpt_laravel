@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use OpenAI\Laravel\Facades\OpenAI;
 
 class openaiController extends Controller
@@ -15,7 +16,7 @@ class openaiController extends Controller
             'prompt' => 'what is 2 + 8',
         ]);
 
-        Chat::create([
+        DB::table('chats')->insert([
             [
                 'role' => 'user',
                 'content' => $request->message
@@ -26,7 +27,7 @@ class openaiController extends Controller
             ]
         ]);
 
-        return redirect()->back();
+        return redirect()->route('chat');
     }
 
     public function chat(){
