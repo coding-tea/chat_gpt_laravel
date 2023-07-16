@@ -13,7 +13,7 @@ class openaiController extends Controller
     public function openai(Request $request){
         $result = OpenAI::completions()->create([
             'model' => 'text-davinci-003',
-            'prompt' => 'what is 2 + 8',
+            'prompt' => $request->message,
         ]);
 
         DB::table('chats')->insert([
